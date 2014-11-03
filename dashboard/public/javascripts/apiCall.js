@@ -19,4 +19,4 @@ ApiCall.prototype = {
   }
 }
 
-module.exports = ApiCall  
+module.exports = ApiCall; 
