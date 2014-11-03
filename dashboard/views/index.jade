@@ -1,12 +1,11 @@
 extends layout
 
 
-script(type='text/javascript').
-    var currentDate = new Date(); 
+
 
 block content
   h1= title
-
+  - var currentDate = new Date();
   h2 Current time: #{currentDate}
   p Number of events triggered: #{numEventsTriggered}
   p Number of modules executed: #{numModulesExecuted}

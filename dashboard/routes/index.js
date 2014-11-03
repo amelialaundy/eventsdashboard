@@ -8,8 +8,7 @@ var apiResults;
 router.get('/', function(req, res) {
   apiCall.getRequest(function (results) {
     console.log(results)
-    // var currentdate = new Date();
-    res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']);
+    res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']});
   })
 });
 
