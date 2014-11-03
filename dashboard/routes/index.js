@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var apiCall = ('../public/javascripts/apiCall.js');
-var ApiCall = new apiCall();
+var ApiCall = require('../public/javascripts/apiCall');
+var apiCall = new ApiCall();
+var apiResults;
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  ApiCall.getRequest(function () {
-    res.render('index', { title: 'Express'});
+  apiCall.getRequest(function (results) {
+    console.log(results)
+    // var currentdate = new Date();
+    res.render('index', { title: 'Dashboard', numEventsTriggered: results['numEventsTriggered'], numModulesExecuted: results['numModulesExecuted']);
   })
 });
 
-module.exports = router;
+
+module.exports = router; 
+  
